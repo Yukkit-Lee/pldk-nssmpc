@@ -1,0 +1,74 @@
+Hyper-parameters:
+ {'dataset': 'CIFAR10', 'subset': 'imagenette', 'model': 'ConvNet', 'res': 128, 'ipc': 50, 'eval_mode': 'S', 'num_eval': 5, 'eval_it': 100, 'epoch_eval_train': 1000, 'Iteration': 5000, 'lr_img': 1000.0, 'lr_lr': 1e-05, 'lr_teacher': 0.001, 'lr_init': 0.01, 'batch_real': 256, 'batch_syn': 500, 'batch_train': 256, 'pix_init': 'real', 'dsa': True, 'dsa_strategy': 'color_crop_cutout_flip_scale_rotate', 'data_path': './data', 'buffer_path': './buffers/cifar10', 'expert_epochs': 2, 'syn_steps': 30, 'max_start_epoch': 40, 'zca': False, 'load_all': False, 'no_aug': False, 'texture': False, 'canvas_size': 2, 'canvas_samples': 1, 'max_files': None, 'max_experts': None, 'force_save': False, 'device': 'cuda', 'im_size': [32, 32], 'dc_aug_param': None, 'dsa_param': <utils.ParamDiffAug object at 0x72d65e259f10>, '_wandb': {}, 'zca_trans': None, 'distributed': True}
+Evaluation model pool:  ['ConvNet']
+BUILDING DATASET
+ 56%|████████████████████████████████                         | 28132/50000 [00:01<00:01, 19491.72it/s]
+class c = 0: 5000 real images
+class c = 1: 5000 real images
+class c = 2: 5000 real images
+class c = 3: 5000 real images
+class c = 4: 5000 real images
+class c = 5: 5000 real images
+class c = 6: 5000 real images
+class c = 7: 5000 real images
+class c = 8: 5000 real images
+class c = 9: 5000 real images
+real images channel 0, mean = -0.0000, std = 1.2211
+real images channel 1, mean = -0.0002, std = 1.2211
+100%|█████████████████████████████████████████████████████████| 50000/50000 [00:02<00:00, 19608.53it/s]
+50000it [00:00, 8800839.31it/s]
+initialize synthetic data from random real images
+[2026-01-12 19:30:14] training begins
+Expert Dir: ./buffers/cifar10/CIFAR10_NO_ZCA/ConvNet
+loading file ./buffers/cifar10/CIFAR10_NO_ZCA/ConvNet/replay_buffer_8.pt
+-------------------------
+Evaluation
+model_train = ConvNet, model_eval = ConvNet, iteration = 0
+DSA augmentation strategy:
+ color_crop_cutout_flip_scale_rotate
+DSA augmentation parameters:
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'ratio_noise': 0.05, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5}
+/mnt/code/lixujie/mtt-distillation/distill.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646756402876/work/torch/csrc/utils/tensor_new.cpp:210.)
+  label_syn = torch.tensor([np.ones(args.ipc,dtype=np.int_)*i for i in range(num_classes)], dtype=torch.long, requires_grad=False, device=args.device).view(-1) # [0,0,0, 1,1,1, ..., 9,9,9]
+  0%|                                                                         | 0/1001 [00:00<?, ?it/s]/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/torch/functional.py:568: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646756402876/work/aten/src/ATen/native/TensorShape.cpp:2228.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████▌ | 977/1001 [00:11<00:00, 105.32it/s]
+100%|██████████████████████████████████████████████████████████████| 1001/1001 [00:11<00:00, 85.14it/s]
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████▎| 990/1001 [00:09<00:00, 106.34it/s]
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:09<00:00, 100.52it/s]
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████▎| 990/1001 [00:09<00:00, 106.61it/s]
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:09<00:00, 100.74it/s]
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████▎| 990/1001 [00:09<00:00, 101.14it/s]
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:09<00:00, 100.91it/s]
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████▎| 990/1001 [00:09<00:00, 104.77it/s]
+[2026-01-12 19:31:06] Evaluate_04: epoch = 1000 train time = 9 s train loss = 0.060542 train acc = 1.0000, test acc = 0.4724
+Evaluate 5 random ConvNet, mean = 0.4703 std = 0.0023
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:09<00:00, 100.60it/s]
+Traceback (most recent call last):
+  File "/mnt/code/lixujie/mtt-distillation/distill.py", line 477, in <module>
+    main(args)
+  File "/mnt/code/lixujie/mtt-distillation/distill.py", line 368, in main
+    grad = torch.autograd.grad(ce_loss, student_params[-1], create_graph=True)[0]
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/torch/autograd/__init__.py", line 275, in grad
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA out of memory. Tried to allocate 126.00 MiB (GPU 0; 23.64 GiB total capacity; 21.25 GiB already allocated; 120.69 MiB free; 21.53 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

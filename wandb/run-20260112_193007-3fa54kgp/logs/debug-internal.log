@@ -1,0 +1,541 @@
+2026-01-12 19:30:07,908 INFO    MainThread:863361 [internal.py:wandb_internal():92] W&B internal server running at pid: 863361, started at: 2026-01-12 19:30:07.908581
+2026-01-12 19:30:07,909 INFO    WriterThread:863361 [datastore.py:open_for_write():77] open: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/run-3fa54kgp.wandb
+2026-01-12 19:30:07,910 DEBUG   SenderThread:863361 [sender.py:send():235] send: header
+2026-01-12 19:30:07,910 DEBUG   SenderThread:863361 [sender.py:send():235] send: run
+2026-01-12 19:30:09,269 INFO    SenderThread:863361 [dir_watcher.py:__init__():169] watching files in: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files
+2026-01-12 19:30:09,269 INFO    SenderThread:863361 [sender.py:_start_run_threads():812] run started: 3fa54kgp with start time 1768217407
+2026-01-12 19:30:09,272 DEBUG   SenderThread:863361 [sender.py:send():235] send: summary
+2026-01-12 19:30:09,273 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: check_version
+2026-01-12 19:30:09,273 INFO    SenderThread:863361 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2026-01-12 19:30:09,273 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: check_version
+2026-01-12 19:30:10,078 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: run_start
+2026-01-12 19:30:10,084 DEBUG   HandlerThread:863361 [meta.py:__init__():37] meta init
+2026-01-12 19:30:10,084 DEBUG   HandlerThread:863361 [meta.py:__init__():51] meta init done
+2026-01-12 19:30:10,084 DEBUG   HandlerThread:863361 [meta.py:probe():211] probe
+2026-01-12 19:30:10,091 DEBUG   HandlerThread:863361 [meta.py:_setup_git():201] setup git
+2026-01-12 19:30:10,102 DEBUG   HandlerThread:863361 [meta.py:_setup_git():208] setup git done
+2026-01-12 19:30:10,102 DEBUG   HandlerThread:863361 [meta.py:_save_pip():55] save pip
+2026-01-12 19:30:10,103 DEBUG   HandlerThread:863361 [meta.py:_save_pip():69] save pip done
+2026-01-12 19:30:10,103 DEBUG   HandlerThread:863361 [meta.py:_save_conda():76] save conda
+2026-01-12 19:30:10,271 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/conda-environment.yaml
+2026-01-12 19:30:10,272 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/wandb-summary.json
+2026-01-12 19:30:10,272 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/requirements.txt
+2026-01-12 19:30:10,689 DEBUG   HandlerThread:863361 [meta.py:_save_conda():86] save conda done
+2026-01-12 19:30:10,689 DEBUG   HandlerThread:863361 [meta.py:probe():249] probe done
+2026-01-12 19:30:10,691 DEBUG   SenderThread:863361 [sender.py:send():235] send: files
+2026-01-12 19:30:10,691 INFO    SenderThread:863361 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2026-01-12 19:30:10,694 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: stop_status
+2026-01-12 19:30:10,694 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: stop_status
+2026-01-12 19:30:11,272 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/conda-environment.yaml
+2026-01-12 19:30:11,272 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/wandb-metadata.json
+2026-01-12 19:30:11,272 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:13,274 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:15,024 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: partial_history
+2026-01-12 19:30:15,276 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:17,278 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:19,280 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:21,281 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:23,281 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:25,282 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:27,283 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:29,285 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:30,693 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: stop_status
+2026-01-12 19:30:31,286 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:33,288 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:33,693 DEBUG   SenderThread:863361 [sender.py:send():235] send: telemetry
+2026-01-12 19:30:33,693 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: stop_status
+2026-01-12 19:30:35,289 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:37,290 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:39,291 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:41,292 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:43,293 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:45,294 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:45,893 DEBUG   SenderThread:863361 [sender.py:send():235] send: stats
+2026-01-12 19:30:46,294 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/config.yaml
+2026-01-12 19:30:47,295 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:49,296 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:50,694 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: stop_status
+2026-01-12 19:30:50,694 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: stop_status
+2026-01-12 19:30:51,297 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:53,298 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:55,299 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:57,300 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:30:59,301 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:31:01,302 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:31:03,303 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:31:05,304 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:31:06,558 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: partial_history
+2026-01-12 19:31:06,558 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: partial_history
+2026-01-12 19:31:06,558 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: partial_history
+2026-01-12 19:31:06,558 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: partial_history
+2026-01-12 19:31:06,600 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: partial_history
+2026-01-12 19:31:06,600 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: partial_history
+2026-01-12 19:31:06,938 DEBUG   SenderThread:863361 [sender.py:send():235] send: telemetry
+2026-01-12 19:31:06,938 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: partial_history
+2026-01-12 19:31:06,939 DEBUG   SenderThread:863361 [sender.py:send():235] send: history
+2026-01-12 19:31:06,939 DEBUG   SenderThread:863361 [sender.py:send():235] send: summary
+2026-01-12 19:31:06,939 INFO    SenderThread:863361 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2026-01-12 19:31:07,305 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/wandb-summary.json
+2026-01-12 19:31:07,305 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:31:08,306 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:31:08,487 DEBUG   SenderThread:863361 [sender.py:send():235] send: stats
+2026-01-12 19:31:09,300 DEBUG   SenderThread:863361 [sender.py:send():235] send: exit
+2026-01-12 19:31:09,300 INFO    SenderThread:863361 [sender.py:send_exit():371] handling exit code: 1
+2026-01-12 19:31:09,300 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:09,300 INFO    SenderThread:863361 [sender.py:send_exit():373] handling runtime: 59
+2026-01-12 19:31:09,300 INFO    SenderThread:863361 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2026-01-12 19:31:09,300 INFO    SenderThread:863361 [sender.py:send_exit():379] send defer
+2026-01-12 19:31:09,300 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:09,301 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: defer
+2026-01-12 19:31:09,301 INFO    HandlerThread:863361 [handler.py:handle_request_defer():164] handle defer: 0
+2026-01-12 19:31:09,301 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: defer
+2026-01-12 19:31:09,301 INFO    SenderThread:863361 [sender.py:send_request_defer():388] handle sender defer: 0
+2026-01-12 19:31:09,301 INFO    SenderThread:863361 [sender.py:transition_state():392] send defer: 1
+2026-01-12 19:31:09,301 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: defer
+2026-01-12 19:31:09,301 INFO    HandlerThread:863361 [handler.py:handle_request_defer():164] handle defer: 1
+2026-01-12 19:31:09,306 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/wandb-summary.json
+2026-01-12 19:31:09,306 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:31:09,398 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: defer
+2026-01-12 19:31:09,398 INFO    SenderThread:863361 [sender.py:send_request_defer():388] handle sender defer: 1
+2026-01-12 19:31:09,398 INFO    SenderThread:863361 [sender.py:transition_state():392] send defer: 2
+2026-01-12 19:31:09,399 DEBUG   SenderThread:863361 [sender.py:send():235] send: stats
+2026-01-12 19:31:09,399 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: defer
+2026-01-12 19:31:09,399 INFO    HandlerThread:863361 [handler.py:handle_request_defer():164] handle defer: 2
+2026-01-12 19:31:09,399 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: defer
+2026-01-12 19:31:09,399 INFO    SenderThread:863361 [sender.py:send_request_defer():388] handle sender defer: 2
+2026-01-12 19:31:09,399 INFO    SenderThread:863361 [sender.py:transition_state():392] send defer: 3
+2026-01-12 19:31:09,399 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: defer
+2026-01-12 19:31:09,399 INFO    HandlerThread:863361 [handler.py:handle_request_defer():164] handle defer: 3
+2026-01-12 19:31:09,399 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: defer
+2026-01-12 19:31:09,399 INFO    SenderThread:863361 [sender.py:send_request_defer():388] handle sender defer: 3
+2026-01-12 19:31:09,399 INFO    SenderThread:863361 [sender.py:transition_state():392] send defer: 4
+2026-01-12 19:31:09,399 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: defer
+2026-01-12 19:31:09,399 INFO    HandlerThread:863361 [handler.py:handle_request_defer():164] handle defer: 4
+2026-01-12 19:31:09,400 DEBUG   SenderThread:863361 [sender.py:send():235] send: summary
+2026-01-12 19:31:09,400 INFO    SenderThread:863361 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2026-01-12 19:31:09,400 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: defer
+2026-01-12 19:31:09,400 INFO    SenderThread:863361 [sender.py:send_request_defer():388] handle sender defer: 4
+2026-01-12 19:31:09,400 INFO    SenderThread:863361 [sender.py:transition_state():392] send defer: 5
+2026-01-12 19:31:09,400 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: defer
+2026-01-12 19:31:09,400 INFO    HandlerThread:863361 [handler.py:handle_request_defer():164] handle defer: 5
+2026-01-12 19:31:09,400 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: defer
+2026-01-12 19:31:09,400 INFO    SenderThread:863361 [sender.py:send_request_defer():388] handle sender defer: 5
+2026-01-12 19:31:09,402 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:10,307 INFO    Thread-7  :863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/wandb-summary.json
+2026-01-12 19:31:10,808 INFO    SenderThread:863361 [sender.py:transition_state():392] send defer: 6
+2026-01-12 19:31:10,809 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:10,809 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: defer
+2026-01-12 19:31:10,809 INFO    HandlerThread:863361 [handler.py:handle_request_defer():164] handle defer: 6
+2026-01-12 19:31:10,809 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: defer
+2026-01-12 19:31:10,809 INFO    SenderThread:863361 [sender.py:send_request_defer():388] handle sender defer: 6
+2026-01-12 19:31:10,809 INFO    SenderThread:863361 [dir_watcher.py:finish():283] shutting down directory watcher
+2026-01-12 19:31:10,910 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:11,308 INFO    SenderThread:863361 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/config.yaml
+2026-01-12 19:31:11,308 INFO    SenderThread:863361 [dir_watcher.py:finish():313] scan: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files
+2026-01-12 19:31:11,308 INFO    SenderThread:863361 [dir_watcher.py:finish():327] scan save: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/conda-environment.yaml conda-environment.yaml
+2026-01-12 19:31:11,308 INFO    SenderThread:863361 [dir_watcher.py:finish():327] scan save: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/config.yaml config.yaml
+2026-01-12 19:31:11,309 INFO    SenderThread:863361 [dir_watcher.py:finish():327] scan save: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log output.log
+2026-01-12 19:31:11,310 INFO    SenderThread:863361 [dir_watcher.py:finish():327] scan save: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/requirements.txt requirements.txt
+2026-01-12 19:31:11,312 INFO    SenderThread:863361 [dir_watcher.py:finish():327] scan save: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/wandb-metadata.json wandb-metadata.json
+2026-01-12 19:31:11,312 INFO    SenderThread:863361 [dir_watcher.py:finish():327] scan save: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/wandb-summary.json wandb-summary.json
+2026-01-12 19:31:11,315 INFO    SenderThread:863361 [sender.py:transition_state():392] send defer: 7
+2026-01-12 19:31:11,315 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:11,317 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: defer
+2026-01-12 19:31:11,317 INFO    HandlerThread:863361 [handler.py:handle_request_defer():164] handle defer: 7
+2026-01-12 19:31:11,317 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: defer
+2026-01-12 19:31:11,317 INFO    SenderThread:863361 [sender.py:send_request_defer():388] handle sender defer: 7
+2026-01-12 19:31:11,317 INFO    SenderThread:863361 [file_pusher.py:finish():145] shutting down file pusher
+2026-01-12 19:31:11,416 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:11,416 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:11,517 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:11,517 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:11,617 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:11,617 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:11,718 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:11,718 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:11,819 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:11,819 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:11,919 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:11,919 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,020 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,020 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,121 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,121 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,221 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,221 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,322 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,322 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,422 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,422 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,523 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,523 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,624 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,624 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,724 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,724 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,825 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,825 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:12,925 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:12,925 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,026 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,026 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,127 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,127 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,228 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,228 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,329 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,329 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,396 INFO    Thread-16 :863361 [upload_job.py:push():137] Uploaded file /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/wandb-summary.json
+2026-01-12 19:31:13,430 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,430 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,530 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,531 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,575 INFO    Thread-12 :863361 [upload_job.py:push():137] Uploaded file /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/conda-environment.yaml
+2026-01-12 19:31:13,631 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,631 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,732 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,732 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,832 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,832 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:13,933 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:13,933 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,034 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,034 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,134 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,134 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,235 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,235 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,335 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,335 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,436 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,436 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,537 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,537 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,638 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,638 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,739 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,739 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,839 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,840 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:14,940 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:14,940 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,041 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,041 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,143 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,143 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,244 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,244 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,344 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,344 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,445 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,445 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,545 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,545 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,646 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,646 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,747 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,747 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,847 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,847 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:15,948 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:15,948 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,048 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,049 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,149 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,149 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,250 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,250 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,351 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,351 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,452 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,452 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,552 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,553 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,653 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,654 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,754 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,754 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,855 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,855 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:16,956 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:16,956 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,057 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,057 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,157 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,157 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,258 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,258 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,358 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,358 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,459 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,459 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,560 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,560 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,660 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,660 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,761 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,761 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,862 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,862 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:17,962 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:17,963 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,063 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,063 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,163 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,164 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,264 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,264 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,364 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,365 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,465 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,465 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,566 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,566 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,667 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,667 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,768 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,768 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,868 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,869 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:18,969 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:18,969 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,070 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,070 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,170 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,170 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,271 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,271 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,371 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,371 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,472 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,472 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,572 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,572 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,673 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,673 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,774 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,774 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,874 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,875 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:19,975 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:19,975 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,076 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,076 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,176 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,176 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,277 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,277 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,377 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,377 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,478 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,478 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,578 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,578 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,679 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,679 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,780 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,780 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,880 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,880 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:20,981 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:20,981 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,081 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,081 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,181 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,181 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,282 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,282 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,382 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,382 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,482 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,482 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,583 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,583 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,683 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,683 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,784 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,784 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,884 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,884 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:21,985 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:21,985 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,085 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,085 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,186 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,186 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,286 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,286 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,387 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,387 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,487 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,487 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,588 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,588 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,688 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,688 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,789 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,789 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,890 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,890 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:22,990 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:22,990 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,091 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,091 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,191 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,191 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,292 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,292 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,392 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,392 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,493 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,493 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,594 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,594 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,694 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,694 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,795 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,795 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,896 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,896 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:23,996 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:23,996 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,097 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,097 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,197 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,197 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,298 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,298 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,399 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,399 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,499 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,499 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,600 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,600 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,700 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,700 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,801 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,801 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:24,901 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:24,901 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,002 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,002 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,102 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,102 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,203 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,203 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,303 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,303 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,403 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,403 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,504 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,504 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,604 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,604 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,704 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,705 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,805 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,805 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:25,906 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:25,906 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,006 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,006 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,107 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,107 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,208 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,208 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,308 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,308 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,409 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,409 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,509 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,509 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,609 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,609 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,710 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,710 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,811 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,811 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:26,911 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:26,912 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,012 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,012 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,113 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,113 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,213 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,213 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,314 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,314 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,414 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,414 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,515 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,515 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,615 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,616 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,716 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,716 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,817 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,817 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:27,917 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:27,917 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,018 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,018 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,118 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,118 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,219 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,219 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,319 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,319 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,420 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,420 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,520 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,521 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,621 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,621 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,722 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,722 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,822 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,823 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:28,923 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:28,923 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,023 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,023 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,124 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,124 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,224 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,224 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,325 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,325 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,426 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,426 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,526 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,527 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,627 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,627 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,728 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,728 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,828 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,828 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:29,929 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:29,929 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:30,030 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:30,030 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:30,130 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:30,131 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:30,231 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:30,231 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:30,332 DEBUG   HandlerThread:863361 [handler.py:handle_request():141] handle_request: poll_exit
+2026-01-12 19:31:30,332 DEBUG   SenderThread:863361 [sender.py:send_request():249] send_request: poll_exit
+2026-01-12 19:31:30,405 WARNING MainThread:863361 [internal.py:wandb_internal():155] Internal process interrupt: 1
+2026-01-12 19:31:37,411 WARNING MainThread:863361 [internal.py:is_dead():387] Internal process exiting, parent pid 863232 disappeared
+2026-01-12 19:31:37,411 ERROR   MainThread:863361 [internal.py:wandb_internal():151] Internal process shutdown.
+2026-01-12 19:31:38,333 INFO    SenderThread:863361 [sender.py:finish():1078] shutting down sender
+2026-01-12 19:31:38,333 INFO    SenderThread:863361 [file_pusher.py:finish():145] shutting down file pusher
+2026-01-12 19:31:38,333 INFO    SenderThread:863361 [file_pusher.py:join():150] waiting for file pusher
+2026-01-12 19:31:38,339 INFO    HandlerThread:863361 [handler.py:finish():778] shutting down handler
+2026-01-12 19:31:38,404 INFO    WriterThread:863361 [datastore.py:close():281] close: /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/run-3fa54kgp.wandb
+2026-01-12 19:32:27,045 INFO    Thread-11 :863361 [upload_job.py:push():137] Uploaded file /tmp/tmp7c2mlvyjwandb/2ta9tg6h-wandb-metadata.json
+2026-01-12 19:33:28,216 INFO    Thread-13 :863361 [upload_job.py:push():137] Uploaded file /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/config.yaml
+2026-01-12 19:33:28,319 INFO    Thread-14 :863361 [upload_job.py:push():137] Uploaded file /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/output.log
+2026-01-12 19:35:43,448 INFO    Thread-15 :863361 [upload_job.py:push():137] Uploaded file /mnt/code/lixujie/mtt-distillation/wandb/run-20260112_193007-3fa54kgp/files/requirements.txt
+2026-01-12 19:35:43,649 INFO    Thread-6  :863361 [sender.py:transition_state():392] send defer: 8
+2026-01-12 19:35:44,914 INFO    MainThread:863361 [internal.py:handle_exit():82] Internal process exited

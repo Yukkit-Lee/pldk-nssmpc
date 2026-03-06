@@ -1,0 +1,80 @@
+Hyper-parameters:
+ {'dataset': 'CIFAR10', 'subset': 'imagenette', 'model': 'ConvNet', 'res': 128, 'ipc': 1, 'eval_mode': 'S', 'num_eval': 5, 'eval_it': 100, 'epoch_eval_train': 1000, 'Iteration': 5000, 'lr_img': 1000.0, 'lr_lr': 1e-05, 'lr_teacher': 0.01, 'lr_init': 0.01, 'batch_real': 256, 'batch_syn': 10, 'batch_train': 256, 'pix_init': 'real', 'dsa': True, 'dsa_strategy': 'color_crop_cutout_flip_scale_rotate', 'data_path': './data', 'buffer_path': './buffers/cifar10', 'expert_epochs': 3, 'syn_steps': 20, 'max_start_epoch': 20, 'zca': False, 'load_all': False, 'no_aug': False, 'texture': False, 'canvas_size': 2, 'canvas_samples': 1, 'max_files': None, 'max_experts': None, 'force_save': False, 'device': 'cuda', 'im_size': [32, 32], 'dc_aug_param': None, 'dsa_param': <utils.ParamDiffAug object at 0x7735399df6d0>, '_wandb': {}, 'zca_trans': None, 'distributed': True}
+Evaluation model pool:  ['ConvNet']
+BUILDING DATASET
+100%|█████████████████████████████████████████████████████████| 50000/50000 [00:02<00:00, 20095.14it/s]
+50000it [00:00, 8414862.37it/s]
+class c = 0: 5000 real images
+class c = 1: 5000 real images
+class c = 2: 5000 real images
+class c = 3: 5000 real images
+class c = 4: 5000 real images
+class c = 5: 5000 real images
+class c = 6: 5000 real images
+class c = 7: 5000 real images
+class c = 8: 5000 real images
+class c = 9: 5000 real images
+real images channel 0, mean = -0.0000, std = 1.2211
+real images channel 1, mean = -0.0002, std = 1.2211
+real images channel 2, mean = 0.0002, std = 1.3014
+/mnt/code/lixujie/mtt-distillation/distill.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646756402876/work/torch/csrc/utils/tensor_new.cpp:210.)
+  label_syn = torch.tensor([np.ones(args.ipc,dtype=np.int_)*i for i in range(num_classes)], dtype=torch.long, requires_grad=False, device=args.device).view(-1) # [0,0,0, 1,1,1, ..., 9,9,9]
+  0%|                                                                         | 0/1001 [00:00<?, ?it/s]
+initialize synthetic data from random real images
+[2026-01-12 16:10:46] training begins
+Expert Dir: ./buffers/cifar10/CIFAR10_NO_ZCA/ConvNet
+loading file ./buffers/cifar10/CIFAR10_NO_ZCA/ConvNet/replay_buffer_1.pt
+-------------------------
+Evaluation
+model_train = ConvNet, model_eval = ConvNet, iteration = 0
+DSA augmentation strategy:
+ color_crop_cutout_flip_scale_rotate
+DSA augmentation parameters:
+  0%|                                                                 | 1/1001 [00:01<29:29,  1.77s/it]/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/torch/functional.py:568: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646756402876/work/aten/src/ATen/native/TensorShape.cpp:2228.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:04<00:00, 225.88it/s]
+ 37%|██████████████████████▋                                       | 366/1001 [00:00<00:01, 449.02it/s]
+[2026-01-12 16:10:51] Evaluate_00: epoch = 1000 train time = 4 s train loss = 0.000671 train acc = 1.0000, test acc = 0.1500
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:02<00:00, 384.09it/s]
+  9%|█████▌                                                         | 89/1001 [00:00<00:02, 441.22it/s]
+
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:02<00:00, 376.63it/s]
+ 69%|██████████████████████████████████████████▌                   | 687/1001 [00:01<00:00, 451.03it/s]
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:02<00:00, 379.77it/s]
+ 42%|█████████████████████████▉                                    | 418/1001 [00:00<00:01, 461.33it/s]
+[2026-01-12 16:11:02] Evaluate_04: epoch = 1000 train time = 2 s train loss = 0.001039 train acc = 1.0000, test acc = 0.1525
+Evaluate 5 random ConvNet, mean = 0.1487 std = 0.0031
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:02<00:00, 374.49it/s]
+Traceback (most recent call last):
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/shutil.py", line 814, in move
+    os.rename(src, real_dst)
+OSError: [Errno 18] Invalid cross-device link: '/tmp/tmpymdrf_i5wandb-media/2vqsntt6.png' -> '/mnt/code/lixujie/mtt-distillation/wandb/run-20260112_161039-ik886gfu/files/media/images/Synthetic_Images_0_184047912898051b7c43.png'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/mnt/code/lixujie/mtt-distillation/distill.py", line 477, in <module>
+    main(args)
+  File "/mnt/code/lixujie/mtt-distillation/distill.py", line 253, in main
+    wandb.log({"Synthetic_Images": wandb.Image(torch.nan_to_num(grid.detach().cpu()))}, step=it)
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 1422, in log
+    self._log(data=data, step=step, commit=commit)
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 1235, in _log
+    self._partial_history_callback(data, self.history_step)
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 1083, in _partial_history_callback
+    self._backend.interface.publish_partial_history(
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/wandb/sdk/interface/interface.py", line 502, in publish_partial_history
+    data = data_types.history_dict_to_json(
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/wandb/sdk/data_types.py", line 2641, in history_dict_to_json
+    payload[key] = val_to_json(
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/wandb/sdk/data_types.py", line 2731, in val_to_json
+    val.bind_to_run(run, key, namespace)
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/wandb/sdk/data_types.py", line 2290, in bind_to_run
+    super().bind_to_run(run, key, step, id_, ignore_copy_err=ignore_copy_err)
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/wandb/sdk/data_types.py", line 539, in bind_to_run
+    shutil.move(self._path, new_path)
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/shutil.py", line 834, in move
+    copy_function(src, real_dst)
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/shutil.py", line 444, in copy2
+    copystat(src, dst, follow_symlinks=follow_symlinks)
+  File "/home/lixujie/.conda/envs/distillation/lib/python3.9/shutil.py", line 383, in copystat
+    lookup("utime")(dst, ns=(st.st_atime_ns, st.st_mtime_ns),
+PermissionError: [Errno 1] Operation not permitted

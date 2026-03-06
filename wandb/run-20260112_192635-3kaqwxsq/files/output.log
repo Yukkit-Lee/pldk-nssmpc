@@ -1,0 +1,30 @@
+Hyper-parameters:
+ {'dataset': 'CIFAR10', 'subset': 'imagenette', 'model': 'ConvNet', 'res': 128, 'ipc': 50, 'eval_mode': 'S', 'num_eval': 5, 'eval_it': 100, 'epoch_eval_train': 1000, 'Iteration': 5000, 'lr_img': 1000.0, 'lr_lr': 1e-05, 'lr_teacher': 0.001, 'lr_init': 0.01, 'batch_real': 256, 'batch_syn': 500, 'batch_train': 256, 'pix_init': 'real', 'dsa': True, 'dsa_strategy': 'color_crop_cutout_flip_scale_rotate', 'data_path': './data', 'buffer_path': './buffers', 'expert_epochs': 2, 'syn_steps': 30, 'max_start_epoch': 40, 'zca': False, 'load_all': False, 'no_aug': False, 'texture': False, 'canvas_size': 2, 'canvas_samples': 1, 'max_files': None, 'max_experts': None, 'force_save': False, 'device': 'cuda', 'im_size': [32, 32], 'dc_aug_param': None, 'dsa_param': <utils.ParamDiffAug object at 0x7cc9e561af10>, '_wandb': {}, 'zca_trans': None, 'distributed': True}
+Evaluation model pool:  ['ConvNet']
+BUILDING DATASET
+ 58%|█████████████████████████████████▏                       | 29096/50000 [00:01<00:01, 20551.83it/s]
+class c = 0: 5000 real images
+class c = 1: 5000 real images
+class c = 2: 5000 real images
+class c = 3: 5000 real images
+class c = 4: 5000 real images
+class c = 5: 5000 real images
+class c = 6: 5000 real images
+class c = 7: 5000 real images
+class c = 8: 5000 real images
+class c = 9: 5000 real images
+real images channel 0, mean = -0.0000, std = 1.2211
+real images channel 1, mean = -0.0002, std = 1.2211
+100%|█████████████████████████████████████████████████████████| 50000/50000 [00:02<00:00, 20408.03it/s]
+50000it [00:00, 8778000.08it/s]
+initialize synthetic data from random real images
+[2026-01-12 19:26:42] training begins
+Expert Dir: ./buffers/CIFAR10_NO_ZCA/ConvNet
+/mnt/code/lixujie/mtt-distillation/distill.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646756402876/work/torch/csrc/utils/tensor_new.cpp:210.)
+  label_syn = torch.tensor([np.ones(args.ipc,dtype=np.int_)*i for i in range(num_classes)], dtype=torch.long, requires_grad=False, device=args.device).view(-1) # [0,0,0, 1,1,1, ..., 9,9,9]
+Traceback (most recent call last):
+  File "/mnt/code/lixujie/mtt-distillation/distill.py", line 477, in <module>
+    main(args)
+  File "/mnt/code/lixujie/mtt-distillation/distill.py", line 169, in main
+    raise AssertionError("No buffers detected at {}".format(expert_dir))
+AssertionError: No buffers detected at ./buffers/CIFAR10_NO_ZCA/ConvNet

@@ -1,0 +1,68 @@
+
+ 57%|████████████████████████████████▋                        | 28692/50000 [00:01<00:01, 20210.73it/s]
+Hyper-parameters:
+ {'dataset': 'CIFAR10', 'subset': 'imagenette', 'model': 'ConvNet', 'res': 128, 'ipc': 50, 'eval_mode': 'S', 'num_eval': 5, 'eval_it': 100, 'epoch_eval_train': 1000, 'Iteration': 5000, 'lr_img': 1000.0, 'lr_lr': 1e-05, 'lr_teacher': 0.001, 'lr_init': 0.01, 'batch_real': 256, 'batch_syn': 500, 'batch_train': 256, 'pix_init': 'real', 'dsa': True, 'dsa_strategy': 'color_crop_cutout_flip_scale_rotate', 'data_path': './data', 'buffer_path': './buffers/cifar10', 'expert_epochs': 2, 'syn_steps': 10, 'max_start_epoch': 40, 'zca': False, 'load_all': False, 'no_aug': False, 'texture': False, 'canvas_size': 2, 'canvas_samples': 1, 'max_files': None, 'max_experts': None, 'force_save': False, 'device': 'cuda', 'im_size': [32, 32], 'dc_aug_param': None, 'dsa_param': <utils.ParamDiffAug object at 0x796235b99f10>, '_wandb': {}, 'zca_trans': None, 'distributed': True}
+Evaluation model pool:  ['ConvNet']
+100%|█████████████████████████████████████████████████████████| 50000/50000 [00:02<00:00, 20181.45it/s]
+50000it [00:00, 8674161.39it/s]
+class c = 0: 5000 real images
+class c = 1: 5000 real images
+class c = 2: 5000 real images
+class c = 3: 5000 real images
+class c = 4: 5000 real images
+class c = 5: 5000 real images
+class c = 6: 5000 real images
+class c = 7: 5000 real images
+class c = 8: 5000 real images
+class c = 9: 5000 real images
+real images channel 0, mean = -0.0000, std = 1.2211
+real images channel 1, mean = -0.0002, std = 1.2211
+real images channel 2, mean = 0.0002, std = 1.3014
+/mnt/code/lixujie/mtt-distillation/distill.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646756402876/work/torch/csrc/utils/tensor_new.cpp:210.)
+  label_syn = torch.tensor([np.ones(args.ipc,dtype=np.int_)*i for i in range(num_classes)], dtype=torch.long, requires_grad=False, device=args.device).view(-1) # [0,0,0, 1,1,1, ..., 9,9,9]
+  0%|                                                                         | 0/1001 [00:00<?, ?it/s]/home/lixujie/.conda/envs/distillation/lib/python3.9/site-packages/torch/functional.py:568: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646756402876/work/aten/src/ATen/native/TensorShape.cpp:2228.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+initialize synthetic data from random real images
+[2026-01-12 19:33:47] training begins
+Expert Dir: ./buffers/cifar10/CIFAR10_NO_ZCA/ConvNet
+loading file ./buffers/cifar10/CIFAR10_NO_ZCA/ConvNet/replay_buffer_2.pt
+-------------------------
+Evaluation
+model_train = ConvNet, model_eval = ConvNet, iteration = 0
+DSA augmentation strategy:
+ color_crop_cutout_flip_scale_rotate
+DSA augmentation parameters:
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'ratio_noise': 0.05, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5}
+
+
+
+
+100%|██████████████████████████████████████████████████████████████| 1001/1001 [00:11<00:00, 84.28it/s]
+ 14%|████████▊                                                     | 143/1001 [00:01<00:08, 100.41it/s]
+
+
+
+
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:09<00:00, 100.53it/s]
+ 14%|████████▊                                                     | 143/1001 [00:01<00:08, 106.65it/s]
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████▎| 990/1001 [00:09<00:00, 103.59it/s]
+100%|█████████████████████████████████████████████████████████████| 1001/1001 [00:09<00:00, 100.67it/s]
+  8%|████▊                                                          | 77/1001 [00:00<00:08, 105.69it/s]
+Traceback (most recent call last):
+  File "/mnt/code/lixujie/mtt-distillation/distill.py", line 477, in <module>
+    main(args)
+  File "/mnt/code/lixujie/mtt-distillation/distill.py", line 211, in main
+    _, acc_train, acc_test = evaluate_synset(it_eval, net_eval, image_syn_eval, label_syn_eval, testloader, args, texture=args.texture)
+  File "/mnt/code/lixujie/mtt-distillation/utils.py", line 371, in evaluate_synset
+    loss_train, acc_train = epoch('train', trainloader, net, optimizer, criterion, args, aug=True, texture=texture)
+  File "/mnt/code/lixujie/mtt-distillation/utils.py", line 322, in epoch
+    img = DiffAugment(img, args.dsa_strategy, param=args.dsa_param)
+  File "/mnt/code/lixujie/mtt-distillation/utils.py", line 542, in DiffAugment
+    x = f(x, param)
+  File "/mnt/code/lixujie/mtt-distillation/utils.py", line 561, in rand_scale
+    if param.batchmode: # batch-wise:
+KeyboardInterrupt

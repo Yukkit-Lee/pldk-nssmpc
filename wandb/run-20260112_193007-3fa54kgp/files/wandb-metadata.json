@@ -1,0 +1,36 @@
+{
+    "os": "Linux-6.11.0-26-generic-x86_64-with-glibc2.39",
+    "python": "3.9.7",
+    "heartbeatAt": "2026-01-12T11:30:10.084729",
+    "startedAt": "2026-01-12T11:30:07.718081",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 2,
+    "cpu_count": 32,
+    "cuda": null,
+    "args": [
+        "--dataset=CIFAR10",
+        "--ipc=50",
+        "--syn_steps=30",
+        "--expert_epochs=2",
+        "--max_start_epoch=40",
+        "--lr_img=1000",
+        "--lr_lr=1e-05",
+        "--lr_teacher=0.001",
+        "--buffer_path=./buffers/cifar10",
+        "--data_path=./data",
+        "--Iteration=5000"
+    ],
+    "state": "running",
+    "program": "/mnt/code/lixujie/mtt-distillation/distill.py",
+    "codePath": "distill.py",
+    "git": {
+        "remote": "https://github.com/GeorgeCazenavette/mtt-distillation.git",
+        "commit": "50dccea47ba48b9cfb3b9c59375d7da92e4e603b"
+    },
+    "email": null,
+    "root": "/mnt/code/lixujie/mtt-distillation",
+    "host": "ubuntu",
+    "username": "lixujie",
+    "executable": "/home/lixujie/.conda/envs/distillation/bin/python"
+}
