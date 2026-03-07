@@ -25,6 +25,47 @@ import pickle
 import socket
 import threading
 import numpy as np
+from datetime import datetime
+
+# ===== 新增：日志记录类 =====
+class Logger:
+    """同时输出到控制台和文件的日志记录器"""
+    def __init__(self, mode):
+        # 创建日志目录
+        self.log_dir = 'nssmpcLog'
+        if not os.path.exists(self.log_dir):
+            os.makedirs(self.log_dir)
+            print(f"创建日志目录: {self.log_dir}")
+        
+        # 生成日志文件名: 年月日_时分秒_mode.txt
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        self.log_file = os.path.join(self.log_dir, f'{timestamp}_{mode}.txt')
+        
+        # 打开日志文件
+        self.file = open(self.log_file, 'w', encoding='utf-8')
+        
+        # 保存原始stdout
+        self.original_stdout = sys.stdout
+        # 替换stdout
+        sys.stdout = self
+    
+    def write(self, message):
+        # 写入文件
+        self.file.write(message)
+        self.file.flush()  # 实时写入
+        # 输出到控制台
+        self.original_stdout.write(message)
+        self.original_stdout.flush()
+    
+    def flush(self):
+        self.file.flush()
+        self.original_stdout.flush()
+    
+    def close(self):
+        # 恢复原始stdout
+        sys.stdout = self.original_stdout
+        self.file.close()
+        print(f"日志已保存到: {self.log_file}")
 
 # ===== NssMPC 导入 =====
 from nssmpc import Party2PC, PartyRuntime, SEMI_HONEST, SecretTensor
@@ -163,8 +204,11 @@ class HospitalParty:
         if not os.path.exists(data_path):
             files = glob.glob('**/images_best.pt', recursive=True)
             if files:
+                # 按修改时间排序，取最新的
+                files.sort(key=os.path.getmtime, reverse=True)
                 data_path = files[0]
-                print(f"      自动找到: {data_path}")
+                print(f"      找到 {len(files)} 个蒸馏数据文件")
+                print(f"      自动选中最新的: {data_path}")
             else:
                 print("      ❌ 找不到 images_best.pt")
                 return
@@ -423,34 +467,43 @@ class ServerParty:
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("用法:")
-        print("  python step3_fixed.py hospital   # 医院 (Party 0)")
-        print("  python step3_fixed.py server     # 服务器 (Party 1)")
+        print("  python 2pc_nssmpc.py hospital   # 医院 (Party 0)")
+        print("  python 2pc_nssmpc.py server     # 服务器 (Party 1)")
         sys.exit(1)
 
     mode = sys.argv[1]
 
-    print(f"Python:    {sys.executable}")
-    print(f"PyTorch:   {torch.__version__}")
-    print(f"CUDA可用:  {torch.cuda.is_available()}")
-    print(f"使用设备:  {device}")
+    # ===== 初始化日志记录 =====
+    logger = Logger(mode)
+    
+    try:
+        print(f"Python:    {sys.executable}")
+        print(f"PyTorch:   {torch.__version__}")
+        print(f"CUDA可用:  {torch.cuda.is_available()}")
+        print(f"使用设备:  {device}")
+        print(f"日志文件:  {logger.log_file}")
 
-    if mode == 'hospital':
-        hospital = HospitalParty()
-        try:
-            hospital.generate_and_send_protected_data()
-        except KeyboardInterrupt:
-            print("\n[医院] 收到中断信号")
-        finally:
-            hospital.cleanup()
+        if mode == 'hospital':
+            hospital = HospitalParty()
+            try:
+                hospital.generate_and_send_protected_data()
+            except KeyboardInterrupt:
+                print("\n[医院] 收到中断信号")
+            finally:
+                hospital.cleanup()
 
-    elif mode == 'server':
-        server = ServerParty()
-        try:
-            server.train_with_received_data()
-        except KeyboardInterrupt:
-            print("\n[服务器] 收到中断信号")
-        finally:
-            server.cleanup()
+        elif mode == 'server':
+            server = ServerParty()
+            try:
+                server.train_with_received_data()
+            except KeyboardInterrupt:
+                print("\n[服务器] 收到中断信号")
+            finally:
+                server.cleanup()
 
-    else:
-        print(f"未知模式: {mode}")
+        else:
+            print(f"未知模式: {mode}")
+    
+    finally:
+        # ===== 关闭日志记录 =====
+        logger.close()

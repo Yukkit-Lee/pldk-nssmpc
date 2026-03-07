@@ -1,0 +1,45 @@
+Python:    /home/lixujie/.conda/envs/nssmpc/bin/python
+PyTorch:   2.3.0+cu118
+CUDA可用:  True
+使用设备:  cuda
+日志文件:  nssmpcLog/20260307_113418_hospital.txt
+
+============================================================
+医院 (Party 0) - 完整密文训练 (修复版)
+============================================================
+设备: cuda
+
+[1/5] 初始化 MPC...
+      等待服务器 MPC 连接...
+Rank 0: Setting up RPC with master localhost:29500
+Rank 0: Waiting for all peers to be ready...
+Rank 0: Connected to rank 1
+Rank 0: All peers are ready!
+      ✅ MPC 连接成功！
+
+[2/5] 加载教师模型...
+      ✅ 教师模型加载成功，设备: cuda:0
+
+[3/5] 加载蒸馏数据...
+      找到 5 个蒸馏数据文件
+      自动选中最新的: logged_files/CIFAR10/restful-sound-8/images_best.pt
+      蒸馏数据: torch.Size([500, 3, 32, 32])，值域: [-3.683, 4.145]
+      数据已归一化，跳过。
+      ✅ 共 500 张蒸馏图片
+
+[4/5] 生成并发送保护数据...
+      ✅ 生成了 4 个保护 batch，共 500 张图片
+
+[5/5] 发送数据到服务器（等待服务器就绪）...
+      ✅ 数据发送完成
+
+[医院] 数据已发送，保持在线等待 MPC 协议...
+[医院] ❤️ 心跳 #1
+[医院] ❤️ 心跳 #2
+[医院] ❤️ 心跳 #3
+[医院] ❤️ 心跳 #4
+[医院] ❤️ 心跳 #5
+[医院] ❤️ 心跳 #6
+
+[医院] 收到中断信号
+[医院] MPC 已清理
