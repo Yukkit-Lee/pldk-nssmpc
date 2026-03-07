@@ -442,7 +442,7 @@ class ServerParty:
                 if last_acc > best_acc:
                     best_acc = last_acc
                     torch.save(self.student.state_dict(), 'best_student_final.pth')
-                    print(f"    👑 新最佳模型！准确率: {last_acc:.2f}%")
+                    # print(f"    👑 新最佳模型！准确率: {last_acc:.2f}%")
 
         print("=" * 70)
         print(f"\n训练完成！最佳准确率: {best_acc:.2f}%")
@@ -453,7 +453,7 @@ class ServerParty:
             while True:
                 time.sleep(10)
                 counter += 1
-                print(f"[服务器] ❤️ 心跳 #{counter}")
+                print(f"[服务器] 心跳 #{counter}")
         except KeyboardInterrupt:
             print("\n[服务器] 收到中断信号")
 
