@@ -80,6 +80,27 @@ def get_dataset(dataset, data_path, batch_size=1, subset="imagenette", args=None
         class_names = dst_train.classes
         class_map = {x:x for x in range(num_classes)}
 
+    elif dataset == 'STL10':
+        channel = 3
+        im_size = (32, 32) if args.res else (96, 96)  # 如果指定res就用32×32
+        num_classes = 10
+        mean = [0.4467, 0.4398, 0.4066]  # STL-10的均值（需要计算）
+        std = [0.2603, 0.2566, 0.2713]   # STL-10的标准差
+        
+        if args.zca:
+            transform = transforms.Compose([transforms.ToTensor(),
+                                            transforms.Resize(im_size)])  # 缩放！
+        else:
+            transform = transforms.Compose([transforms.ToTensor(),
+                                            transforms.Resize(im_size),  # 缩放！
+                                            transforms.Normalize(mean=mean, std=std)])
+        
+        from torchvision.datasets import STL10
+        dst_train = STL10(data_path, split='train', download=True, transform=transform)
+        dst_test = STL10(data_path, split='test', download=True, transform=transform)
+        class_names = dst_train.classes
+        class_map = {x: x for x in range(num_classes)}
+
 
     elif dataset == 'ImageNet':
         channel = 3
