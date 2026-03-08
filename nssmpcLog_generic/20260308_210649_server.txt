@@ -1,0 +1,27 @@
+Python:   /home/lixujie/.conda/envs/nssmpc/bin/python
+PyTorch:  2.3.0+cu118
+CUDA可用: True
+使用设备: cuda
+日志文件: nssmpcLog_generic/20260308_210649_server.txt
+
+================================================================
+服务器 (Party 2) - 通用 3方联合训练 + Knowledge Alignment
+  参与医院: ['hospital_a', 'hospital_b']
+  数据集:   ['stl10', 'cifar10']
+  目标分辨率: (32, 32)
+================================================================
+设备: cuda
+
+[1/5] 初始化 Student 模型...
+      ConvNet  im_size=(32, 32)  参数量: 320,010
+
+[2/5] 构建测试集（混合所有参与方数据集）...
+Files already downloaded and verified
+      hospital_a (CIFAR10)  10000 张  -> resize 到 (32, 32)
+Files already downloaded and verified
+      hospital_b (STL10)  8000 张  -> resize 到 (32, 32)
+      合并测试集共 18000 张图片  （异构混合）
+
+[3/5] MPC 协同解密，并行接收各方加密数据...
+      监听端口 9991...
+      监听端口 9992...

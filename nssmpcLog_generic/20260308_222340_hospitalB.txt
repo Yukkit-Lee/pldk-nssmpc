@@ -1,0 +1,46 @@
+Python:   /home/lixujie/.conda/envs/nssmpc/bin/python
+PyTorch:  2.3.0+cu118
+CUDA可用: True
+使用设备: cuda
+日志文件: nssmpcLog_generic/20260308_222340_hospitalB.txt
+
+================================================================
+HOSPITAL_B (Party 1)
+  数据集: CIFAR10  原始尺寸: (32, 32)  目标尺寸: (32, 32)
+================================================================
+设备: cuda
+
+[1/5] 初始化 MPC...
+      等待对端 MPC 连接...
+Rank 1: Setting up RPC with master localhost:29500
+Rank 1: Waiting for all peers to be ready...
+Rank 1: Connected to rank 0
+Rank 1: All peers are ready!
+      MPC 连接成功！
+
+[2/5] 加载教师模型（CIFAR10，由本院独立训练）...
+      教师模型加载成功，设备: cuda:0
+
+[3/5] 加载蒸馏数据（images_best_cifar10.pt）...
+      自动找到: logged_files/CIFAR10/misty-galaxy-7/images_best_cifar10.pt
+      自动找到: logged_files/CIFAR10/misty-galaxy-7/labels_best_cifar10.pt
+      数据形状: torch.Size([500, 3, 32, 32])  值域: [-5.612, 5.651]
+      数据已归一化，跳过归一化步骤。
+      共 500 张蒸馏图片，尺寸 (32, 32)
+
+[4/5] 生成并加密训练数据...
+      生成 2 个加密 batch（共 500 张，尺寸 (32, 32)）
+
+[5/5] 发送到服务器（端口 9992）...
+      发送完成
+
+[hospital_b] 数据已发送，保持在线（MPC 协议需要）...
+[hospital_b] 心跳 #1
+[hospital_b] 心跳 #2
+[hospital_b] 心跳 #3
+[hospital_b] 心跳 #4
+[hospital_b] 心跳 #5
+[hospital_b] 心跳 #6
+
+[hospital_b] 收到中断信号
+[hospital_b] MPC 已清理
