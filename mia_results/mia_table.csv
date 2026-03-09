@@ -1,0 +1,4 @@
+Algorithm,Model,Test Acc,Priv Acc Ab,Priv Acc Aw,Priv Acc LT,LT AUC
+PLDK (Single Teacher, Plaintext),CNN,65.61%,50.22%,50.29%,50.83%,0.5043
+PLDK+NssMPC (Multi, no KA),CNN,63.94%,50.09%,50.19%,50.61%,0.5046
+PLDK+NssMPC+KA (Ours),CNN,61.18%,49.62%,49.94%,50.73%,0.5041

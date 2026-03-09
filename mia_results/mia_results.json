@@ -1,0 +1,44 @@
+[
+  {
+    "model_name": "PLDK (Single Teacher, Plaintext)",
+    "description": "PLDK baseline, single teacher, no encryption",
+    "test_acc": 65.61,
+    "priv_acc_ab": 50.21985343104596,
+    "priv_acc_ab_std": 0.3847975770338055,
+    "priv_acc_aw": 50.28647568287808,
+    "priv_acc_aw_std": 1.0001329249724296,
+    "priv_acc_lt": 50.83333333333333,
+    "lt_auc": 0.5042522577777778,
+    "loss_gap": 0.004748880863189697,
+    "m_loss_mean": 0.99681156873703,
+    "nm_loss_mean": 1.0015604496002197
+  },
+  {
+    "model_name": "PLDK+NssMPC (Multi, no KA)",
+    "description": "3PC multi-teacher, NssMPC encrypted, no Knowledge Alignment",
+    "test_acc": 63.94,
+    "priv_acc_ab": 50.08660892738175,
+    "priv_acc_ab_std": 0.8228859510536695,
+    "priv_acc_aw": 50.193204530313125,
+    "priv_acc_aw_std": 1.321473819396926,
+    "priv_acc_lt": 50.61333333333333,
+    "lt_auc": 0.5046206577777779,
+    "loss_gap": 0.027820229530334473,
+    "m_loss_mean": 1.0224332809448242,
+    "nm_loss_mean": 1.0502535104751587
+  },
+  {
+    "model_name": "PLDK+NssMPC+KA (Ours)",
+    "description": "3PC multi-teacher, NssMPC + Knowledge Alignment",
+    "test_acc": 61.18,
+    "priv_acc_ab": 49.620253164556964,
+    "priv_acc_ab_std": 0.7999110470248445,
+    "priv_acc_aw": 49.9400399733511,
+    "priv_acc_aw_std": 1.086249205712928,
+    "priv_acc_lt": 50.72666666666667,
+    "lt_auc": 0.5040884711111111,
+    "loss_gap": 0.009563446044921875,
+    "m_loss_mean": 1.1590690612792969,
+    "nm_loss_mean": 1.1686325073242188
+  }
+]
