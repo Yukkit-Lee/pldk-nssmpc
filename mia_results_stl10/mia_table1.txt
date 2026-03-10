@@ -1,0 +1,12 @@
+MIA Evaluation — CIFAR-10  (Matching PLDK Table 1)
+Member = CIFAR-10 training set  |  Non-member = CIFAR-10 test set
+=================================================================
+Algorithm                          TestAcc        Ab        Aw
+─────────────────────────────────────────────────────────────────
+No defense (CNN)                     76.8%       N/A       N/A
+PLDK (paper)                        50.21%       N/A       N/A
+─────────────────────────────────────────────────────────────────
+PLDK (Single Teacher)               65.61%    49.85%    49.30%
+PLDK+NssMPC (Multi, no KA)          63.94%    49.58%    50.03%
+PLDK+NssMPC+KA (Ours)               61.18%    49.61%    52.69%
+=================================================================

@@ -1,0 +1,57 @@
+[
+  {
+    "model_name": "PLDK (Single Teacher, STL-10)",
+    "description": "PLDK baseline, single teacher, STL-10, no encryption",
+    "dataset": "stl10",
+    "test_acc_detail": {
+      "stl10": 40.9
+    },
+    "test_acc": 40.9,
+    "priv_acc_ab": 49.384359400998335,
+    "priv_acc_ab_std": 1.2689301806946829,
+    "priv_acc_aw": 49.31780366056572,
+    "priv_acc_aw_std": 1.3336083134451837,
+    "priv_acc_lt": 50.260000000000005,
+    "lt_auc": 0.49206688,
+    "loss_gap": -0.030693411827087402,
+    "m_loss_mean": 1.6299984455108643,
+    "nm_loss_mean": 1.599305272102356
+  },
+  {
+    "model_name": "PLDK+NssMPC (Multi, no KA, STL-10)",
+    "description": "3PC multi-teacher, NssMPC, STL-10, no Knowledge Alignment",
+    "dataset": "stl10",
+    "test_acc_detail": {
+      "stl10": 41.8
+    },
+    "test_acc": 41.8,
+    "priv_acc_ab": 49.25124792013311,
+    "priv_acc_ab_std": 1.4390514682488946,
+    "priv_acc_aw": 49.7504159733777,
+    "priv_acc_aw_std": 0.5568452755634437,
+    "priv_acc_lt": 50.3,
+    "lt_auc": 0.49111040000000006,
+    "loss_gap": -0.039881348609924316,
+    "m_loss_mean": 1.6280142068862915,
+    "nm_loss_mean": 1.5881328582763672
+  },
+  {
+    "model_name": "PLDK+NssMPC+KA (Cross-Domain)",
+    "description": "3PC multi-teacher, NssMPC + KA, Hospital-A=CIFAR-10, Hospital-B=STL-10",
+    "dataset": "cross",
+    "test_acc_detail": {
+      "stl10": 48.625,
+      "cifar10": 50.07
+    },
+    "test_acc": 49.3475,
+    "priv_acc_ab": 50.04991680532446,
+    "priv_acc_ab_std": 1.2424728587417264,
+    "priv_acc_aw": 49.91680532445924,
+    "priv_acc_aw_std": 1.550191640446204,
+    "priv_acc_lt": 50.16666666666667,
+    "lt_auc": 0.490415,
+    "loss_gap": -0.027428507804870605,
+    "m_loss_mean": 1.5004006624221802,
+    "nm_loss_mean": 1.4729721546173096
+  }
+]

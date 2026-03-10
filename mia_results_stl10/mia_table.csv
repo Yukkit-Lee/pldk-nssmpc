@@ -1,0 +1,4 @@
+Algorithm,Dataset,Test Acc,Priv Acc Ab,Priv Acc Aw,Priv Acc LT,LT AUC
+PLDK (Single Teacher, STL-10),STL10,40.90%,49.38%,49.32%,50.26%,0.4921
+PLDK+NssMPC (Multi, no KA, STL-10),STL10,41.80%,49.25%,49.75%,50.30%,0.4911
+PLDK+NssMPC+KA (Cross-Domain),CROSS,C10:50.07%/STL:48.62%,50.05%,49.92%,50.17%,0.4904
