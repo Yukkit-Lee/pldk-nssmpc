@@ -110,7 +110,6 @@ $$
   x = [x]_0 + [x]_1 \pmod{2^{64}}
   $$
   
-
 - 单一方持有的份额在统计上与随机噪声无异
 
 - 重构需要两方份额同时参与，实现信息论安全
@@ -155,17 +154,27 @@ NssMPC是一个开源的安全多方计算库，支持2PC/3PC协议，提供Ring
 
 ### 4.1 系统架构总览
 
-**[此处插入系统架构图：医院A、医院B、服务器三方交互，数据流走向]**
+**[系统框架图]：**
+
+<img src="./StructureFig1.png">
 
 | 模块                | 解决的问题                   | 对应技术                       |
 | :------------------ | :--------------------------- | :----------------------------- |
+| 蒸馏数据生成        | 基础数据准备                 | MTT轨迹匹配                    |
 | MPC加密传输         | 教师训练明文、logits明文传输 | 加法秘密共享、定点数编码       |
 | Knowledge Alignment | 多教师知识冲突               | 统计对齐、置信度加权、标签修正 |
-| 蒸馏数据生成        | 基础数据准备                 | MTT轨迹匹配                    |
 
-### 4.2 MPC加密传输模块
+### 4.2 蒸馏数据生成
 
-#### 4.2.1 定点数编码（解决RingTensor精度问题）
+采用MTT轨迹匹配方法生成蒸馏数据，ipc=50（每类50张）。对于STL-10数据集，设置`--res=32`统一分辨率为32×32，确保与CIFAR-10兼容，为后续跨域实验奠定基础。
+
+**[蒸馏图像]：**
+
+<span><img src="./comparisonFig/figure1_distilled_cifar10.png" style="width:40%"><img src="./comparisonFig/figure1_distilled_stl10.png" style="width:39%"></span>
+
+### 4.3 MPC加密传输模块
+
+#### 4.3.1 定点数编码（解决RingTensor精度问题）
 
 RingTensor仅支持整数运算，直接转换浮点数会导致精度损失。我们采用定点数编码：
 $$
@@ -173,7 +182,7 @@ $$
 $$
 缩放因子$2^{16}$提供约$1.5\times10^{-5}$的精度，对神经网络训练完全足够。
 
-#### 4.2.2 加法秘密共享（解决蒸馏数据暴露和logits泄露）
+#### 4.3.2 加法秘密共享（解决蒸馏数据暴露和logits泄露）
 
 将编码后的张量拆分为两个随机份额：
 $$
@@ -182,12 +191,6 @@ $$
 \text{share}_1 &= \hat{x} - \text{share}_0 \quad (\text{mod } 2^{64})
 \end{aligned}
 $$
-**[蒸馏图像]：**
-
-<span><img src="./comparisonFig/figure1_distilled_cifar10.png" style="width:40%"><img src="./comparisonFig/figure1_distilled_stl10.png" style="width:39%"></span>
-
-
-
 **[加密图像(随机噪声)]:**
 
 <img src="./comparisonFig/figure2_secret_share_cifar10.png" style="width:70%">
@@ -196,7 +199,7 @@ $$
 
 
 
-#### 4.2.3 安全重构
+#### 4.3.3 安全重构
 
 服务器在两方在线时重构原始数据：
 $$
@@ -216,11 +219,11 @@ $$
 
 <img src="./comparisonFig/figure3_reconstructed_cifar10.png" style="width:80%"><img src="./comparisonFig/figure3_reconstructed_stl10.png" style="width:80%">
 
-### 4.3 Knowledge Alignment模块（解决多教师知识冲突）
+### 4.4 Knowledge Alignment模块（解决多教师知识冲突）
 
 当多个教师在不同数据分布上训练时，其logits存在系统偏差。KA模块通过三步对齐解决知识冲突：
 
-#### 4.3.1 Step 1：统计对齐（Statistical Alignment）
+#### 4.4.1 Step 1：统计对齐（Statistical Alignment）
 
 计算各教师logits的均值和标准差，映射到全局规范空间：
 $$
@@ -228,7 +231,7 @@ $$
 $$
 
 
-#### 4.3.2 Step 2：置信度加权融合（Confidence-Weighted Blending）
+#### 4.4.2 Step 2：置信度加权融合（Confidence-Weighted Blending）
 
 不同教师在不同类别上的置信度可能不同，通过置信度权重进行融合：
 $$
@@ -236,17 +239,12 @@ $$
 $$
 
 
-#### 4.3.3 Step 3：标签条件修正（Label-Conditional Correction）
+#### 4.4.3 Step 3：标签条件修正（Label-Conditional Correction）
 
 防止对齐后软标签与硬标签语义倒置，对真实类别进行轻微上调：
 $$
 \mathbf{z}{\text{aligned}}[i, c] += 0.5 \times \boldsymbol{\sigma}{\text{global}}[c]
 $$
-
-
-### 4.4 蒸馏数据生成
-
-采用MTT轨迹匹配方法生成蒸馏数据，ipc=50（每类50张）。对于STL-10数据集，设置`--res=32`统一分辨率为32×32，确保与CIFAR-10兼容，为后续跨域实验奠定基础。
 
 ------------------------
 
@@ -268,7 +266,7 @@ $$
    - 使用蒸馏损失更新学生模型参数
 8. **混合测试集评估**：在合并的测试集上评估模型性能
 
-**[此处插入算法流程图]**
+<img src="./Fig2.png">
 
 ------
 
