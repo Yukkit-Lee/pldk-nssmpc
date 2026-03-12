@@ -1,4 +1,4 @@
-# PMA：基于安全多方计算与知识对齐的隐私保护多教师知识蒸馏
+# PMA：基于安全多方计算与知识对齐的隐私保护多教师蒸馏框架
 
 ## 1. 研究背景与目的
 
@@ -105,7 +105,7 @@ $$
 
 安全多方计算允许多个参与方在不泄露各自私有输入的情况下联合计算函数。本研究采用**加法秘密共享**：
 
-- 将秘密x拆分为两个随机份额：[x]_0、[x]_1，满足
+- 将秘密x拆分为两个随机份额：$[x]_0$、$[x]_1$，满足
   $$
   x = [x]_0 + [x]_1 \pmod{2^{64}}
   $$
@@ -126,9 +126,7 @@ NssMPC是一个开源的安全多方计算库，支持2PC/3PC协议，提供Ring
 
 | 方法类别   | 代表性工作                      | 核心思想       | 隐私准确率       | 局限性                        |
 | :--------- | :------------------------------ | :------------- | :--------------- | :---------------------------- |
-| 差分隐私   | DP-SGD (Abadi et al., 2016)     | 梯度加噪       | 51.7% (CIFAR-10) | 精度损失大（55.2%）           |
 | 差分隐私   | PATE (Papernot et al., 2016)    | 教师集成+噪声  | 49.9%            | 需要公共数据，精度低（45.4%） |
-| 对抗正则化 | AdvReg (Nasr et al., 2018)      | 最小化攻击收益 | 51.2%            | 隐私-效用权衡不佳             |
 | 知识迁移   | DMP (Shejwalkar et al., 2021)   | 参考数据蒸馏   | 50.6%            | 需要特定属性公共数据          |
 | 梯度扰动   | QL-PGD (Pham et al., 2025)      | 分层梯度扰动   | ~54%             | 隐私保护不足                  |
 | 特征级DP   | HierarchicalDP (IEEE TAI, 2025) | 特征层差分隐私 | 54.4%            | 精度损失大（46.77%）          |
@@ -166,7 +164,7 @@ NssMPC是一个开源的安全多方计算库，支持2PC/3PC协议，提供Ring
 
 ### 4.2 蒸馏数据生成
 
-采用MTT轨迹匹配方法生成蒸馏数据，ipc=50（每类50张）。对于STL-10数据集，设置`--res=32`统一分辨率为32×32，确保与CIFAR-10兼容，为后续跨域实验奠定基础。
+采用MTT轨迹匹配方法生成蒸馏数据，ipc=50（每类50张）。对于STL-10数据集，设置统一分辨率为32×32，确保与CIFAR-10兼容，为后续跨域实验奠定基础。
 
 **[蒸馏图像]：**
 
@@ -178,7 +176,7 @@ NssMPC是一个开源的安全多方计算库，支持2PC/3PC协议，提供Ring
 
 RingTensor仅支持整数运算，直接转换浮点数会导致精度损失。我们采用定点数编码：
 $$
-\hat{\mathbf{x}} = \text{round}(\mathbf{x} \times 2^{16})
+\hat{\mathbf{x}} = \text{round}(\mathbf{x} \times 2^{16}) 
 $$
 缩放因子$2^{16}$提供约$1.5\times10^{-5}$的精度，对神经网络训练完全足够。
 
@@ -189,7 +187,7 @@ $$
 \begin{aligned}
 \text{share}_0 &= \text{random}(\hat{x}) \\
 \text{share}_1 &= \hat{x} - \text{share}_0 \quad (\text{mod } 2^{64})
-\end{aligned}
+\end{aligned} 
 $$
 **[加密图像(随机噪声)]:**
 
@@ -202,18 +200,9 @@ $$
 #### 4.3.3 安全重构
 
 服务器在两方在线时重构原始数据：
-$$
-\begin{aligned}
-\hat{x}&= \text{share}_0 + \text{share}_1 \quad (\text{mod } 2^{64}) \\
-\end{aligned}
-$$
+$$ \hat{\mathbf{x}} = \text{share}_0 + \text{share}_1 \pmod{2^{64}} $$
 
-$$
-\begin{aligned}
-
-x_{\text{rec}} &= \hat{x} / 2^{16}
-\end{aligned}
-$$
+$$ \mathbf{x}_{\text{rec}} = \frac{\hat{\mathbf{x}}}{2^{16}}  $$
 
 **[在线重构图像]**：
 
@@ -226,25 +215,22 @@ $$
 #### 4.4.1 Step 1：统计对齐（Statistical Alignment）
 
 计算各教师logits的均值和标准差，映射到全局规范空间：
-$$
-\mathbf{z}{\text{align}} = \frac{\mathbf{z} - \boldsymbol{\mu}{\text{src}}}{\boldsymbol{\sigma}{\text{src}}} \odot \boldsymbol{\sigma}{\text{global}} + \boldsymbol{\mu}_{\text{global}}
-$$
+$$ \mathbf{z}_{\text{align}} = \frac{\mathbf{z} - \boldsymbol{\mu}_{\text{src}}}{\boldsymbol{\sigma}_{\text{src}}} \odot \boldsymbol{\sigma}_{\text{global}} + \boldsymbol{\mu}_{\text{global}}  $$
 
 
 #### 4.4.2 Step 2：置信度加权融合（Confidence-Weighted Blending）
 
 不同教师在不同类别上的置信度可能不同，通过置信度权重进行融合：
-$$
-\mathbf{w}{\text{conf}}[c] = \frac{\mathbf{p}{\text{src}}[c]}{\mathbf{p}{\text{src}}[c] + \mathbf{p}{\text{other}}[c] + \epsilon}$, $\mathbf{z}{\text{aligned}} = \mathbf{w}{\text{conf}} \odot \mathbf{z}{\text{align}} + (1-\mathbf{w}{\text{conf}}) \odot \boldsymbol{\mu}_{\text{global}}
-$$
+$$ \mathbf{w}_{\text{conf}}[c] = \frac{\mathbf{p}_{\text{src}}[c]}{\mathbf{p}_{\text{src}}[c] + \mathbf{p}_{\text{other}}[c] + \epsilon}  $$
 
 
 #### 4.4.3 Step 3：标签条件修正（Label-Conditional Correction）
 
 防止对齐后软标签与硬标签语义倒置，对真实类别进行轻微上调：
-$$
-\mathbf{z}{\text{aligned}}[i, c] += 0.5 \times \boldsymbol{\sigma}{\text{global}}[c]
-$$
+$$ \mathbf{z}_{\text{aligned}} = \mathbf{w}_{\text{conf}} \odot \mathbf{z}_{\text{align}} + (\mathbf{1} - \mathbf{w}_{\text{conf}}) \odot \boldsymbol{\mu}_{\text{global}}  $$
+
+
+$$ \mathbf{z}_{\text{aligned}}[i, c] \leftarrow \mathbf{z}_{\text{aligned}}[i, c] + 0.5 \times \boldsymbol{\sigma}_{\text{global}}[c]  $$
 
 ------------------------
 
@@ -286,15 +272,16 @@ $$
 | 教师            | 训练数据           | 准确率 | 说明       |
 | :-------------- | :----------------- | :----- | :--------- |
 | Teacher A (95%) | CIFAR-10完整训练集 | 95.36% | 高质量教师 |
-| Teacher B (80%) | CIFAR-10子集/早停  | ~80%   | 低质量教师 |
+| Teacher B (80%) | CIFAR-10 子集  | 80.61%   | 低质量教师 |
+| Teacher A (85%) | STL10完整训练集  | 84.95%   | 高质量教师 |
+| Teacher B (70%) | STL10 子集  | 71.08%   | 低质量教师 |
 
 
+<!-- #### 5.1.3蒸馏数据生成及可视化
 
-#### 5.1.3蒸馏数据生成及可视化
+采用MTT方法，ipc=50（每类50张），STL-10蒸馏时设置`--res=32`统一分辨率。 -->
 
-采用MTT方法，ipc=50（每类50张），STL-10蒸馏时设置`--res=32`统一分辨率。
-
-#### 5.1.4 评估指标
+#### 5.1.3 评估指标
 
 - **Test Acc**：测试集分类准确率
 - **Priv Acc (Ab)**：黑盒攻击成功率（越接近50%越好）
@@ -308,7 +295,6 @@ $$
 | :------------------ | :-------------- | :------- | :----------- | :-------------- | :-------------- |
 | No Defense          | Single          | CIFAR-10 | 67.46        | 76.8            | 77.2            |
 | Regu (WD+LS)        | Single          | CIFAR-10 | 53.20        | 53.0            | 53.8            |
-| AdvReg              | Single          | CIFAR-10 | 53.40        | 51.2            | 51.9            |
 | DMP                 | Single          | CIFAR-10 | 65.00        | 50.6            | 51.3            |
 | PLDK                | Single          | CIFAR-10 | 69.30        | 50.21           | 50.28           |
 | **PLDK + MPC**      | Single          | CIFAR-10 | 65.61        | 50.22           | 50.29           |
@@ -322,10 +308,10 @@ $$
 | Method              | Teacher Setting | Dataset | Test Acc (%) | Priv Acc (Ab) ↓ | Priv Acc (Aw) ↓ |
 | :------------------ | :-------------- | :------ | :----------- | :-------------- | :-------------- |
 | PLDK                | Single          | STL-10  | 40.90        | 49.38           | 49.32           |
-| PLDK+ 3PC           | 95% + 80%       | STL-10  | 41.88        | 49.25           | 49.75           |
-| **3PC + KA (Ours)** | 95% + 80%       | STL-10  | **48.60**    | **50.05**       | **49.92**       |
+| PLDK+ 3PC           | 85% + 71%       | STL-10  | 41.88        | 49.25           | 49.75           |
+| **3PC + KA (Ours)** | 85% + 71%       | STL-10  | **48.60**    | **50.05**       | **49.92**       |
 
-**说明**：KA模块在更具挑战性的STL-10数据集上带来**+6.72%**的显著提升，证明其在复杂视觉任务中的有效性。
+**说明**：KA模块在更具挑战性的STL-10数据集上带来**6.72**%的显著提升，证明其在复杂视觉任务中的有效性。
 
 #### 表3：与最新隐私防御方法的对比
 
@@ -334,7 +320,7 @@ $$
 | QL-PGD (2025)     | Training Defense     | CIFAR-10 | ~65          | N/A            |
 | HierarchicalDP    | Differential Privacy | CIFAR-10 | 46.77        | 54.4           |
 | Loss-Diff Defense | Regularization       | CIFAR-10 | N/A          | N/A            |
-| **Ours **         | Secure Distillation  | CIFAR-10 | **64.36**    | **49.62**      |
+| **Ours**         | Secure Distillation  | CIFAR-10 | **64.36**    | **49.62**      |
 | **Ours**          | Secure Distillation  | STL-10   | **48.60**    | **50.05**      |
 
 **对比分析**：与HierarchicalDP相比，我们的方法在CIFAR-10上准确率高出**17.59%**，隐私准确率低**4.78%**，实现了隐私和效用的更好权衡。
@@ -343,12 +329,18 @@ $$
 
 | Teacher A | Teacher B    | Dataset  | Test Acc (%) | Priv Acc (Ab) | Observation                    |
 | :-------- | :----------- | :------- | :----------- | :------------ | :----------------------------- |
-| 95%       | —            | CIFAR-10 | 69.3         | 50.21         | Single teacher baseline        |
-| 95%       | 95%          | CIFAR-10 | 65.61        | 51.83         | Two strong teachers            |
+| 95%       | —            | CIFAR-10 | 65.61         | 50.21         | Single teacher baseline(MPC Encrypt)        |
+| 95%       | 95%          | CIFAR-10 | 65.06        | 51.83         | Two strong teachers            |
 | 95%       | 80% (w/o KA) | CIFAR-10 | 63.94        | 50.09         | Weak teacher hurts performance |
 | 95%       | 80% (w/ KA)  | CIFAR-10 | **64.36**    | **49.62**     | KA mitigates weak teacher      |
+| 85%       | —            | STL10 | 46.64         | 48.49         | Single teacher baseline （MPC Encrypt）      |
+| 85%       | 85%          | STL10 | 43.61        | 48.39         | Two strong teachers （重新跑Test acc）      |
+| 85%       | 70% (w/o KA) | STL10 | 41.83       | 49.68         | Weak teacher hurts performance |
+| 85%       | 70% (w/ KA)  | STL10 | 49.51        | 49.85         | Two strong teachers            |
 
-**说明**：KA模块在教师质量不均的场景下，有效抑制了低质量教师的负面影响，将准确率从63.94%提升至64.36%。
+**说明**：KA模块在教师质量不均的场景下，有效抑制了低质量教师的负面影响，将准确率从63.94%提升至64.36%。在更具挑战性的STL-10上，KA的效果更加显著。
+
+
 
 #### 表5：跨域泛化能力（异构数据）
 
