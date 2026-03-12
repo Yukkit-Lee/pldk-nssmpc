@@ -149,30 +149,39 @@ DATASET_CONFIGS = {
 # ---- 医院配置 ----
 # 指定每家医院使用的数据集、教师模型权重文件、蒸馏数据文件
 HOSPITAL_CONFIGS = {
-    'hospital_a': {
-        'dataset'      : 'cifar10',                  # 必须是 DATASET_CONFIGS 中的 key
-        'teacher_path' : 'teacher_resnet18_cifar10.pth',    # 由医院A 用 data_A 独立训练
-        'images_path'  : 'images_best_cifar10.pt', # 蒸馏图像
-        'labels_path'  : 'labels_best_cifar10.pt', # 蒸馏标签
+    # 'hospital_a': {
+    #     'dataset'      : 'cifar10',                  # 必须是 DATASET_CONFIGS 中的 key
+    #     'teacher_path' : 'teacher_resnet18_cifar10.pth',    # 由医院A 用 data_A 独立训练
+    #     'images_path'  : 'images_best_cifar10.pt', # 蒸馏图像
+    #     'labels_path'  : 'labels_best_cifar10.pt', # 蒸馏标签
+    #     'party_id'     : 0,
+    #     'port'         : 9991,
+    # },
+        'hospital_a': {
+        'dataset'      : 'stl10',                    # 不同数据集
+        'teacher_path' : 'teacher_resnet18_stl10_low.pth',
+        'images_path'  : 'images_best_stl10.pt',
+        'labels_path'  : 'labels_best_stl10.pt',
         'party_id'     : 0,
         'port'         : 9991,
     },
-    # 'hospital_b': {
-    #     'dataset'      : 'stl10',                    # 不同数据集
-    #     'teacher_path' : 'teacher_resnet18_stl10.pth',
-    #     'images_path'  : 'images_best_stl10.pt',
-    #     'labels_path'  : 'labels_best_stl10.pt',
-    #     'party_id'     : 1,
-    #     'port'         : 9992,
-    # },
-        'hospital_b': {
-        'dataset'      : 'cifar10',                    # 不同数据集
-        'teacher_path' : 'teacher_b_resnet18.pth',
-        'images_path'  : 'images_best_cifar10.pt',
-        'labels_path'  : 'labels_best_cifar10.pt',
+
+    'hospital_b': {
+        'dataset'      : 'stl10',                    # 不同数据集
+        'teacher_path' : 'teacher_resnet18_stl10.pth',
+        'images_path'  : 'images_best_stl10.pt',
+        'labels_path'  : 'labels_best_stl10.pt',
         'party_id'     : 1,
         'port'         : 9992,
     },
+    #     'hospital_b': {
+    #     'dataset'      : 'cifar10',                    # 不同数据集
+    #     'teacher_path' : 'teacher_b_resnet18.pth',
+    #     'images_path'  : 'images_best_cifar10.pt',
+    #     'labels_path'  : 'labels_best_cifar10.pt',
+    #     'party_id'     : 1,
+    #     'port'         : 9992,
+    # },
 }
 
 # ---- 统一训练分辨率 ----
@@ -182,7 +191,7 @@ TARGET_SIZE = (32, 32)  # 改为32×32以匹配蒸馏数据
 
 # ---- 全局训练参数 ----
 T_temp            = 4.0     #4.0
-alpha             = 0.7     #0.5
+alpha             = 0.5     #0.5
 batch_size        = 256     # 32×32 可以用更大的 batch
 epochs            = 1000
 FIXED_POINT_SCALE = 2 ** 16
@@ -630,7 +639,7 @@ class ServerParty:
             self.batches_per_hospital[keys[1]],
             self.dev
         )
-        print("      Knowledge Alignment 就绪")
+        print("      Knowledge Alignment 就緒")
 
         print("\n[5/5] 初始化完成，准备开始训练。")
 
@@ -666,7 +675,20 @@ class ServerParty:
         print("=" * 80)
 
         best_acc  = 0.0
-        save_name = 'best_student_3pc_ka_generic.pth'
+        
+        # ===== 生成模型保存名称 =====
+        # 获取当前时间戳（精确到秒）
+        current_time = datetime.now().strftime('%H%M%S')
+        
+        # 获取数据集名称
+        dataset_names = []
+        for k in self.hospital_keys:
+            dataset_names.append(HOSPITAL_CONFIGS[k]['dataset'])
+        dataset_str = '_'.join(dataset_names)
+        
+        # 生成最终保存文件名: bestStudent_3pc_datasetA_datasetb_HHMMSS.pth
+        save_name = f'bestStudent_3pc_{dataset_str}_{current_time}.pth'
+        print(f"模型将保存为: {save_name}")
 
         for epoch in range(epochs):
             self.student.train()
@@ -720,7 +742,7 @@ class ServerParty:
                 if acc > best_acc:
                     best_acc = acc
                     torch.save(self.student.state_dict(), save_name)
-                    # print(f"    新最佳模型！准确率: {acc:.2f}%  已保存 -> {save_name}")
+                    # print(f"    👑 新最佳模型！准确率: {acc:.2f}%  已保存 -> {save_name}")
 
         print("=" * 80)
         print(f"\n联合训练完成！最佳准确率: {best_acc:.2f}%")
