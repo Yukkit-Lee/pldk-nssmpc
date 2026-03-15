@@ -1,0 +1,47 @@
+[
+  {
+    "method": "No Defense",
+    "dataset": "STL-10",
+    "teacher_setting": "Single (Direct)",
+    "test_acc": 59.575,
+    "priv_acc_ab": 73.17803660565724,
+    "priv_acc_ab_std": 0.7090607571601505,
+    "priv_acc_aw": 78.20299500831945,
+    "priv_acc_aw_std": 1.6336689129628705,
+    "priv_acc_lt": 79.03999999999999,
+    "lt_auc": 0.7980444800000001,
+    "loss_gap": 3.2851743698120117,
+    "m_loss_mean": 0.0013507356634363532,
+    "nm_loss_mean": 3.286525011062622
+  },
+  {
+    "method": "Regu (WD+LS)",
+    "dataset": "STL-10",
+    "teacher_setting": "Single (Regularized)",
+    "test_acc": 55.725,
+    "priv_acc_ab": 77.40432612312813,
+    "priv_acc_ab_std": 0.9435904744597541,
+    "priv_acc_aw": 79.86688851913479,
+    "priv_acc_aw_std": 1.407933164812395,
+    "priv_acc_lt": 79.72,
+    "lt_auc": 0.8018236000000001,
+    "loss_gap": 2.5885744094848633,
+    "m_loss_mean": 0.009881190024316311,
+    "nm_loss_mean": 2.5984554290771484
+  },
+  {
+    "method": "DMP",
+    "dataset": "STL-10",
+    "teacher_setting": "Single",
+    "test_acc": 45.8625,
+    "priv_acc_ab": 51.08153078202995,
+    "priv_acc_ab_std": 1.8468468453260014,
+    "priv_acc_aw": 51.31447587354408,
+    "priv_acc_aw_std": 0.7917056408233158,
+    "priv_acc_lt": 52.900000000000006,
+    "lt_auc": 0.535932,
+    "loss_gap": 0.18651330471038818,
+    "m_loss_mean": 1.5037484169006348,
+    "nm_loss_mean": 1.690261721611023
+  }
+]
